@@ -671,3 +671,11 @@ color: var(--main-back-color);
 .linkedin-footer:hover{
   fill: var(--main-back-color);
 }
+
+.form-footer{
+  display: flex;
+ background-color:grey ;
+  width: 570px;
+  height: 86px;
+  margin-left: 93px;
+}
