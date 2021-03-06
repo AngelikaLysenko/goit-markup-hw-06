@@ -241,14 +241,25 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 528px;
-  min-height: 581px;
+  margin: 0; 
   background-color: var(--main-back-color);
   padding: 40px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  display:column;
+  justify-content: left;
 }
+
+.title-overlay {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+  padding-bottom: 12px;
+  }
 
 .backdrop.is-hidden {
   visibility: hidden;
@@ -268,11 +279,90 @@ a {
   background-color: var(--main-back-color);
 }
 
-.modal-icon {
-  position: absolute;
-  top: 5px;
-  right: 5px;
+.form {
+  padding-bottom: 20px;
 }
+
+.row {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 0;
+  border: none;
+}
+
+.input-folder {
+  height: 100%;
+  border: 1px solid var(--paragraf-text-color);
+  box-sizing: border-box;
+ border-radius: 2px;
+ color: var(--paragraf-text-color);
+  position: relative;
+  margin: 0;
+  padding: 0;
+  transition: color 250ms var(--timing-function);
+  }
+
+  .form-input-modal{
+    border: none;
+  }
+
+  .modal-icon {
+    position: absolute;
+    top:14px;
+    left: 15px;
+    fill: var(--primary-text-color);
+  }
+  
+  .input-folder:hover,
+  .input-folder:focus {
+    color: var(--accent-color);
+ border: 1px solid var(--accent-color);
+  }
+
+.input-folder:focus +.modal-icon {
+  fill: var(--accent-color);
+}
+
+.form-label {
+  position: absolute;
+  font-style: 500;
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.01em;
+  color: var(--paragraf-text-color);
+  transform: translateY(-100%);
+  /* transition: transform 250ms; */
+  }
+
+.form-label:hover {
+  fill: var(--accent-color); 
+  /* transform: translateY(100px); */
+  /* transform: translateX(35px); */
+}
+
+
+
+
+
+.form-input-modal {
+  width: 100%;
+cursor: pointer;
+padding: 14px 33px;
+
+}
+
+.form-input-comment {
+  width: 448px;
+  height: 120px;
+}
+
+.form-label-comment {
+  color: var(--paragraf-text-color);
+}
+
+
+
 
 /*Особенности*/
 
@@ -547,8 +637,6 @@ color: var(--main-back-color);
  border: 1px solid var(--accent-color);
 }
 
-
-
 .brand,
 .client-logo {
   padding: 0;
@@ -616,14 +704,6 @@ color: var(--main-back-color);
   justify-content: center;
 }
 
-.enjoyus {
-  font-weight: 700;
-  line-height: 1.14;
-  text-transform: uppercase;
-  color: var(--main-back-color);
-  font-size: 14px;
-}
-
 .team-list-icon-footer {
   width: 206px;
   border-radius: 50%;
@@ -632,7 +712,6 @@ color: var(--main-back-color);
   text-align: center;
   flex-basis: calc(100% / 4 - 10px);
   padding: 0;
-  /* margin-top: 16px; */
 }
 
 .team-item-footer {
@@ -672,10 +751,76 @@ color: var(--main-back-color);
   fill: var(--main-back-color);
 }
 
-.form-footer{
-  display: flex;
- background-color:grey ;
-  width: 570px;
-  height: 86px;
+.contactus {
+  margin: 0;
+  padding: 0;
+  display: table-column;
   margin-left: 93px;
 }
+
+.enjoyus {
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--main-back-color);
+  font-size: 14px;
+}
+
+.form-footer{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 570px;
+  height: 86px;
+}
+
+.form-field {
+  margin-right: 12px;
+}
+
+
+.form-input {
+width: 358px;
+height: 50px; 
+border: 1px solid rgba(255, 255, 255, 0.3);
+box-sizing: border-box;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+border-radius: 4px;
+padding: 15px 16px;
+background-color:var(--fon-back-hero);
+}
+
+.button.footer {
+  background: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  font-weight: 500;
+  line-height: 1.9;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px 29px;
+  margin: 0;
+  width: 200px;
+}
+
+.button-contact {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.team-item-send {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background:var(--accent-color);
+  border-radius: 4px;
+  position: absolute;
+  top:13px;
+  right:28px;
+}
+
+
+
+
