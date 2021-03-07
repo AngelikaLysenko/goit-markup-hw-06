@@ -725,8 +725,8 @@ a {
 
 .footer {
   background: var(--footer-fon);
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .container-footer {
@@ -745,6 +745,10 @@ a {
   margin-top: 9px;
   padding: 0;
   margin: 0;
+}
+
+.contact-item {
+  margin-top: 9px;
 }
 
 .address {
