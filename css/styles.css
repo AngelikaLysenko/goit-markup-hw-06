@@ -177,7 +177,6 @@ a {
 /*Hero*/
 
 .hero {
-  /* max-width: 1600px; */
   height: 600px;
   background-color: rgba(47, 48, 58, 0.8);
   background-image: linear-gradient(
@@ -237,6 +236,8 @@ a {
 }
 
 .modal {
+  width: 528px;
+  height: 581px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -274,18 +275,20 @@ a {
   height: 30px;
   cursor: pointer;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: var(--main-back-color);
   padding: 0;
-  border: none;
+  box-sizing: border-box;
   color: var(--primary-text-color);
   transition: color 250ms var(--timing-function);
 }
 
 .modal-icon-close {
-  width: 20px;
-  height: 20px;
+  width: 11px;
+  height: 11px;
   padding: 0;
+  margin-left: auto;
+  margin-right: auto;
   fill: currentColor;
 }
 
@@ -293,33 +296,41 @@ a {
 .button-close:focus {
   color: var(--accent-color);
 }
+
 /* <!-- Modal form --> */
-.row {
+
+.row:not(:last-child) {
   position: relative;
   padding: 0;
   border: none;
-  margin-bottom: 28px;
+  margin-bottom: 10px;
   margin-top: 28px;
+}
+.form {
+  display: block;
 }
 
 .input-folder {
-  border: 1px solid var(--paragraf-text-color);
-  box-sizing: border-box;
-  border-radius: 4px;
+  border: none;
   padding: 0;
   margin-top: 4px;
   transition: color 250ms var(--timing-function);
 }
 
 .form-input-modal {
-  border: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
   padding: 10px 35px;
   margin: 0;
   font: inherit;
 }
 
 .input-folder-comment {
-  margin-top: 10px;
+  margin-top: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .modal-icon {
@@ -329,13 +340,12 @@ a {
   color: var(--primary-text-color);
 }
 
-.input-folder:hover,
-.input-folder:focus {
-  fill: var(--accent-color);
+.form-input-modal:hover,
+.form-input-modal:focus {
   border: 1px solid var(--accent-color);
 }
 
-.input-folder:focus + .modal-icon {
+.form-input-modal:hover + .modal-icon {
   fill: var(--accent-color);
 }
 
@@ -347,13 +357,10 @@ a {
   letter-spacing: 0.01em;
   color: var(--paragraf-text-color);
   transform: translateY(-100%);
-  /* transform: translateX(70%);  */
 }
 
 .form-label:hover {
   fill: var(--accent-color);
-  /* transform: translateY(-20px);  */
-  /* transform: translateX(100px); */
 }
 
 .checkbox-section {
@@ -386,7 +393,6 @@ a {
   border: 2px solid var(--primary-text-color);
   border-radius: 2px;
   position: absolute;
-  /* transform: translateY(0%); */
   cursor: pointer;
 }
 
@@ -426,16 +432,21 @@ a {
 }
 
 .form-input-comment {
-  width: 448px;
+  width: 100%;
   height: 120px;
   padding: 12px 16px;
   top: 0;
   left: 0;
   resize: none;
+  border: none;
 }
 
 .form-label-comment {
   color: var(--paragraf-text-color);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
 }
 
 .text::placeholder {
@@ -612,8 +623,6 @@ a {
   color: var(--paragraf-text-color);
   background-color: var(--main-back-color);
   border-radius: 50%;
-  transition: color 250ms var(--timing-function),
-    background-color 250ms var(--timing-function);
 }
 
 .team-item:not(:last-child) {
@@ -627,6 +636,7 @@ a {
 }
 
 .team-icon {
+  color: var(--paragraf-text-color);
   fill: currentColor;
   width: 20px;
   height: 20px;
@@ -652,6 +662,10 @@ a {
   margin-top: 0;
 }
 
+.container .client-main {
+  margin: 0;
+  padding: 0;
+}
 .client-title {
   padding: 0;
   margin: 0;
@@ -667,49 +681,41 @@ a {
 .container-brand {
   margin: 0;
   padding: 0;
-  width: 170px;
   height: 90px;
 }
 
 .brand {
   list-style: none;
-  width: 1200px;
   height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  margin: 0;
 }
 
-.client-logo {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  width: 170px;
-  height: 90px;
-  border: 1px solid #afb1b8;
-  box-sizing: border-box;
-  border-radius: 4px;
-  align-items: center;
-  color: var(--paragraf-text-color);
-  margin: auto;
-  padding: 0;
-  flex-basis: calc(100% / 6 - var(--nav-list-gap));
-  cursor: pointer;
-  transition: color 250ms var(--timing-function),
-    border 250ms var(--timing-function);
+.client-logo:not(:last-child) {
+  margin-right: 30px;
 }
 
 .icon {
   fill: currentColor;
-  width: 45px;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.client-logo:hover,
-.client-logo:focus {
+.logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+  color: var(--paragraf-text-color);
+  border: 1px solid var(--paragraf-text-color);
+  border-radius: 4px;
+  transition: color 250ms var(--timing-function);
+}
+
+.logo-link:hover,
+.logo-link:focus {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
