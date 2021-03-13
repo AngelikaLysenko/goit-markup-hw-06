@@ -14,7 +14,6 @@ body {
   color: var(--primary-text-color);
   font-family: Roboto, sans-serif;
   font-size: 14px;
-  margin: 0;
 }
 
 /* COMMON */
@@ -31,29 +30,21 @@ p {
   margin: 0;
 }
 
-/* * {
+* {
   margin: 0;
   padding: 0;
-} */
+  outline: none;
+}
 
 a {
   text-decoration: none;
 }
 
-.hero {
-  max-width: 1600px;
-  padding-top: 200px;
-  padding-bottom: 280px;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-}
-
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 15px 0 15px;
+  padding: 0 15px;
 }
 
 /*Шапка сайта*/
@@ -62,7 +53,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  list-style: none;
 }
 
 .logo {
@@ -89,7 +79,6 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 0;
   margin-left: 93px;
 }
 
@@ -126,7 +115,6 @@ a {
 .contact {
   display: flex;
   align-items: center;
-  padding: 0;
   margin-left: auto;
 }
 
@@ -178,6 +166,10 @@ a {
 
 .hero {
   height: 600px;
+}
+
+.hero .container{
+  max-width: 1600px;
   background-color: rgba(47, 48, 58, 0.8);
   background-image: linear-gradient(
       to right,
@@ -188,6 +180,11 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-title {
@@ -196,10 +193,7 @@ a {
   font-size: 44px;
   line-height: 1.5;
   text-transform: uppercase;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 696px;
+  max-width: 700px;
   margin-bottom: 30px;
   letter-spacing: 0.06em;
 }
@@ -209,9 +203,6 @@ a {
 .button {
   color: var(--main-back-color);
   background-color: var(--accent-color);
-  margin-left: auto;
-  margin-top: auto;
-  padding: 0;
 }
 
 .button.primary {
@@ -259,6 +250,7 @@ a {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
+  margin-bottom: 12px;
 }
 
 .backdrop.is-hidden {
@@ -297,38 +289,25 @@ a {
 
 /* <!-- Modal form --> */
 
-.row:not(:last-child) {
-  position: relative;
-  padding: 0;
-  border: none;
+.row {
   margin-bottom: 10px;
-  margin-top: 28px;
-}
-.form {
-  display: block;
-}
-
-.input-folder {
-  border: none;
-  padding: 0;
-  margin-top: 4px;
-  transition: color 250ms var(--timing-function);
 }
 
 .form-input-modal {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  outline: none;
   padding: 10px 35px;
   margin: 0;
   font: inherit;
+  transition: border 250ms var(--timing-function);
+}
+
+.input-folder {
+  position: relative;
 }
 
 .input-folder-comment {
   margin-top: 4px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
-  border-radius: 4px;
 }
 
 .modal-icon {
@@ -336,8 +315,10 @@ a {
   top: 14px;
   left: 15px;
   color: var(--primary-text-color);
+  transition: color 250ms var(--timing-function);
 }
-
+.form-input-comment:hover,
+.form-input-comment:focus,
 .form-input-modal:hover,
 .form-input-modal:focus {
   border: 1px solid var(--accent-color);
@@ -347,14 +328,19 @@ a {
   fill: var(--accent-color);
 }
 
+.form-input-modal:focus + .modal-icon {
+  fill: var(--accent-color);
+}
+
 .form-label {
-  position: absolute;
-  font-style: 500;
+  font-weight: 500;
   font-size: 12px;
   line-height: 1.166;
   letter-spacing: 0.01em;
   color: var(--paragraf-text-color);
-  transform: translateY(-100%);
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 5px;
 }
 
 .form-label:hover {
@@ -436,7 +422,8 @@ a {
   top: 0;
   left: 0;
   resize: none;
-  border: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
 }
 
 .form-label-comment {
@@ -735,6 +722,7 @@ a {
 
 .container-footer {
   display: flex;
+  justify-content: space-between;
 }
 
 .footer-info {
